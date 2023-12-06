@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Home Page</title> 
+</head> 
+<body> 
+	<h2>Welcome to GeeksforGeeks!!</h2> 
+
+	<form:form action="submit" method="post" modelAttribute="home"> 
+		<table> 
+			<tr> 
+				<td><form:label path="fName">First Name: </form:label></td> 
+				<td><form:input path="fName" id="fName" maxlength="6" size="8" onblur="updateName()"/></td> 
+			</tr> 
+			<tr> 
+				<td><form:label path="lName">Last Name: </form:label></td> 
+				<td><form:input path="lName" id="lName" maxlength="10" size="10" onblur="updateName()"/></td> 
+			</tr> 
+			<tr> 
+				<td><form:label path="name">Full Name: </form:label></td> 
+				<td><form:input path="name" id="name" readonly="true" title="This is Read-only field"
+								cssStyle="font-family:monospace;color:green"/></td> 
+			</tr> 
+			<tr> 
+				<td><form:label path="email">E-Mail Address: </form:label></td> 
+				<td><form:input path="email" /></td> 
+			</tr> 
+			<tr> 
+				<td><form:button>Submit</form:button></td> 
+			</tr> 
+		</table> 
+	</form:form> 
+	
+	<script type="text/javascript"> 
+		
+		function updateName(){ 
+			var firstName = document.getElementById("fName").value; 
+			var lastName = document.getElementById("lName").value; 
+			
+			var fullName = firstName+" "+lastName; 
+			document.getElementById("name").value = fullName; 
+			
+		} 
+	</script> 
+
+</body> 
+</html> 
